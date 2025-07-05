@@ -131,6 +131,15 @@ export const Container = styled.section<
     display: block;
     text-align: center;
 
+    .certification {
+      a {
+        margin: 0 auto 25px auto;
+        display: block;
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
     .hard-skills {
       justify-content: center;
     }

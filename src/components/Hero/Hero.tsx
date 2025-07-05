@@ -1,12 +1,15 @@
 import { Container } from "./styles"
 import { motion } from "framer-motion"
+import Resume from "../../assets/Shubham_Khot_Resume.pdf";
+
 
 import Illustration from "../../assets/illustration.svg"
 import linkedin from '../../assets/linkedin.svg'
 import githubIcon from '../../assets/github.svg'
 import whatsapp from '../../assets/whatsapp.svg'
 import Hello from '../../assets/Hello.gif'
-import telegram from '../../assets/telegram.svg'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -19,6 +22,18 @@ const fadeInRight = {
 }
 
 export function Hero() {
+  const handleDownload = () => {
+    toast.success('Resume downloaded!', {
+      position: 'bottom-right',
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'colored',
+    });
+  };
   return (
     <Container id="home">
       <div className="hero-text">
@@ -62,17 +77,9 @@ export function Hero() {
           animate="animate"
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <a href="#contact">Contact</a>
+          <a href={Resume} download onClick={handleDownload}>Download Resume</a>
         </motion.button>
          
-        {/* <motion.div
-          variants={fadeInUp}
-          initial="initial"
-          animate="animate"
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          <a href="#contact" className="button">Contact</a>
-        </motion.div> */}
         <motion.div
           className="social-media"
           variants={fadeInUp}
@@ -113,6 +120,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 1 }}
         />
       </div>
+      <ToastContainer
+  toastStyle={{ background: "var(--green)", color: '#1a4d2e', fontWeight: 500 }}
+/>
     </Container>
   )
 }

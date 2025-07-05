@@ -6,6 +6,7 @@ import jsIcon from "../../assets/js-icon.svg";
 import reactIcon from "../../assets/react-icon.svg";
 import typescriptIcon from "../../assets/typescript-icon.svg";
 import { motion } from "framer-motion";
+import udemy from "../../assets/udemy.png";
 
 export function About() {
   return (
@@ -51,28 +52,24 @@ export function About() {
             Here are my main skills:
           </motion.h3>
           <div className="hard-skills">
-            {[
-              jsIcon,
-              reactIcon,
-              typescriptIcon,
-              htmlIcon,
-              cssIcon
-            ].map((icon, i) => (
-              <motion.div
-                className="hability"
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.1 + i * 0.01,
-                  ease: "easeOut",
-                }}
-                viewport={{ once: true }}
-              >
-                <img src={icon} alt="skill" />
-              </motion.div>
-            ))}
+            {[jsIcon, reactIcon, typescriptIcon, htmlIcon, cssIcon].map(
+              (icon, i) => (
+                <motion.div
+                  className="hability"
+                  key={i}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.1 + i * 0.01,
+                    ease: "easeOut",
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <img src={icon} alt="skill" />
+                </motion.div>
+              )
+            )}
           </div>
         </div>
         <motion.div
@@ -102,7 +99,7 @@ export function About() {
               },
             ].map((item) => (
               <div className="experience-item" key={item.org}>
-                <h4 style={{fontSize: "20px"}}>{item.title}</h4>
+                <h4 style={{ fontSize: "20px" }}>{item.title}</h4>
                 <p>{item.org}</p>
                 <p>{item.location}</p>
               </div>
@@ -120,6 +117,43 @@ export function About() {
           <h4>Bachelor of Technology (BTech)</h4>
           <p>Technocrats Institute of Technology, Bhopal | 2018 - 2022</p>
           <p>82%</p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+          viewport={{ once: true }}
+          className="certification"
+        >
+          <h3>Certification:</h3>
+          <h4>Udemy Certificate : Advanced ReactJS Course</h4>
+          <br></br>
+          <br></br>
+          <a
+            style={{
+              display: 'block',
+              overflow: "hidden",
+              borderRadius: 12,
+              maxWidth: 300,
+            }}
+            href="https://www.udemy.com/certificate/UC-5dc61602-9c1f-4308-b5d7-ef67d8bb78ee"
+            target="_blank"
+          >
+            <motion.img
+              whileHover={{ scale: 1.12 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.9, ease: "backOut" }}
+              src={udemy}
+              alt="Udemy Certificate"
+              // width={300}
+              style={{
+                display: "block",
+                borderRadius: 12,
+                boxShadow: "0 4px 24px rgba(0,0,0,0.12)",
+                maxWidth: '100%'
+              }}
+            />
+          </a>
         </motion.div>
       </div>
       <div className="about-image">

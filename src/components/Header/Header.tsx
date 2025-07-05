@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import Resume from "../../assets/Shubham_Khot_Resume.pdf";
 import { Container } from "./styles";
 import Logo from "../Logo/Logo";
 import Toggle from "../Toggle/Toggle";
@@ -31,9 +30,6 @@ export function Header() {
         </a>
         <a href="#contact" onClick={closeMenu}>
           Contact
-        </a>
-        <a href={Resume} download className="button">
-          Resume
         </a>
       </nav>
       <Toggle onChange={toggleTheme} />

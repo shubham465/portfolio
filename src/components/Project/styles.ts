@@ -3,7 +3,7 @@ import type { PropsWithChildren } from "react";
 
 
 export const Container = styled.section<PropsWithChildren<React.HTMLAttributes<HTMLElement>>>`
-  margin-top: 15rem;
+  margin-top: 8rem;
   
   h2{
     text-align: center;

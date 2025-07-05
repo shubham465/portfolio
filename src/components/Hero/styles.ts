@@ -91,10 +91,9 @@ export const Container = styled.section<
     );
   }
   .btn-grad {
-    margin: 10px;
-    padding: 15px 45px;
+    padding: 15px 30px;
     text-align: center;
-    font-size: 20px;
+    font-size: 17px;
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
